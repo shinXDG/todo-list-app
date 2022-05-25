@@ -1,12 +1,12 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react'
+import styled from 'styled-components'
 type Props = {
-  isLoading?: boolean;
-  title?: string;
-  typeButton?: any;
-  onClickButton: any;
-  style?: React.CSSProperties;
-};
+  isLoading?: boolean
+  title?: string
+  typeButton?: any
+  onClickButton: any
+  style?: React.CSSProperties
+}
 
 const StyleButton = styled.button`
   padding: 6px 10px;
@@ -24,12 +24,12 @@ const StyleButton = styled.button`
   :hover {
     opacity: 0.8;
   }
-`;
+`
 
 export const MyButton: React.FC<Props> = ({
   isLoading,
   title,
-  typeButton = "button",
+  typeButton = 'button',
   style,
   onClickButton,
 }) => {
@@ -37,11 +37,11 @@ export const MyButton: React.FC<Props> = ({
     <StyleButton
       type={typeButton}
       onClick={() => {
-        onClickButton && onClickButton();
+        onClickButton && onClickButton()
       }}
       style={style}
     >
-      <span style={{ marginLeft: "6px" }}>{title || "Add"}</span>
+      <span style={{ marginLeft: '6px' }}>{title || 'Add'}</span>
     </StyleButton>
-  );
-};
+  )
+}

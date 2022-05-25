@@ -1,63 +1,76 @@
-.title-todolist{
-    font-size: 22px;
-    display: flex;
-    justify-content: center;
-    font-weight: 500;
+.title-todolist {
+  font-size: 22px;
+  display: flex;
+  justify-content: center;
+  font-weight: 500;
 }
-.body-todolist{
-    margin-top: 30px;
+.body-todolist {
+  margin-top: 30px;
+}
+.header-todolist {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom:10px;
+}
 
+.container-add {
+  width: 100%;
 }
-.header-todolist{
-    display: flex;
-    justify-content: space-between;
+.item-form {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+.span-error {
+  color: red;
+}
+.warp-todo-list {
+  position: relative;
+  box-sizing: border-box;
+}
+.todo-block {
+  margin-top: 10px;
+  border: 1px solid #d9d9d9;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
 }
 
-.container-add{
-    width: 100%;
+.warp-item-todo {
+  width: calc(100% - 20px);
+  padding: 10px;
+  display: flex;
+  border-bottom: 1px solid #d9d9d9;
+  justify-content: space-between;
 }
-.item-form{
-    margin-top:20px;
-    display: flex;
-    justify-content: center;
+.title-todo {
+  display: flex;
+  font-weight: bold;
+  width: 70%;
 }
-.span-error{
-    color:red;
+.action-todo {
+  display: flex;
+  width: 15%;
+  justify-content: space-around;
 }
-.warp-todo-list{
-    position:relative;
-    box-sizing: border-box;
+.content-todo {
+  width: calc(100% - 20px);
+  padding: 10px;
 }
-.warp-item-todo{
- width:calc(100% - 20px);   
- margin-top:20px;
- padding:10px;
- display: flex;
- border:1px solid #d9d9d9;
- border-top-left-radius: 6px;
- border-top-right-radius: 6px;
- justify-content: space-between;
-}
-.title-todo{
-    display: flex;
-    font-weight: bold;
-    width: 70%;
-}
-.action-todo{
- display: flex;
- width:15%;
- justify-content: space-around;
-}
-.content-todo{
-    border:1px solid #d9d9d9;
-    width: calc(100% - 20px);
-    padding:10px;
+.warp-bulk-action {
+  position: fixed;
+  width: calc(100%);
+  z-index: 9999;
+  bottom: 10px;
+  left:0px;
+  display: flex;
+  justify-content: center;
 }
 .bulk-action{
-    position:fixed;
-    width:calc(100% );
-    padding:15px;
-    background-color: gray;
-    z-index:9999;
-    bottom:0px;
+  height: 100%;
+  width: 100%;
+  max-width: 1200px;
+  padding:15px;
+  background-color: #d9d9d9;
+  display: flex;
+  justify-content: space-between;
 }

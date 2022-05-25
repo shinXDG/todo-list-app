@@ -1,10 +1,10 @@
-import { AddTodoPage } from "features/todoList/pages/AddTodoPage";
-import React from "react";
-import { Routes, Route } from "react-router-dom";
-import { Container } from "shared/container/Container";
-import { HomePage } from "../features/home";
-import { TodolistPage } from "../features/todoList";
-import publicRouter from "./PublicRouter";
+import { AddTodoPage } from 'features/todoList/pages/AddTodoPage'
+import React from 'react'
+import { Routes, Route } from 'react-router-dom'
+import { Container } from 'shared/container/Container'
+import { HomePage } from '../features/home'
+import { TodolistPage } from '../features/todoList'
+import publicRouter from './PublicRouter'
 
 export default function AppNavigator() {
   const MainContainer = () => {
@@ -19,8 +19,8 @@ export default function AppNavigator() {
           <Route path="/add-todo" element={<AddTodoPage />} />
         </Routes>
       </Container>
-    );
-  };
+    )
+  }
 
   return (
     // <Routes>
@@ -33,10 +33,10 @@ export default function AppNavigator() {
     // <MainContainer />
     <div
       style={{
-        display: "flex",
-        justifyContent: "center",
-        height: "100%",
-        width: "100%",
+        display: 'flex',
+        justifyContent: 'center',
+        height: '100%',
+        width: '100%',
       }}
     >
       <Container>
@@ -50,5 +50,5 @@ export default function AppNavigator() {
         </Routes>
       </Container>
     </div>
-  );
+  )
 }

@@ -1,15 +1,15 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react'
+import styled from 'styled-components'
 
 type InputProps = {
-  name?: any;
-  placeholder?: string;
-  value?: string;
-  defaultValue?: string;
-  disabled?: boolean;
-  style?: React.CSSProperties;
-  onChange?: any; //(value: string) => void
-};
+  name?: any
+  placeholder?: string
+  value?: string
+  defaultValue?: string
+  disabled?: boolean
+  style?: React.CSSProperties
+  onChange?: any //(value: string) => void
+}
 export const InputStyled = styled.input`
   line-height: 26px;
   padding: 5px;
@@ -24,11 +24,11 @@ export const InputStyled = styled.input`
     border-color: #1890ff;
     box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
   }
-`;
+`
 
-export const InputComponent: React.FC<InputProps> = ({
+export const Input: React.FC<InputProps> = ({
   name,
-  placeholder = "",
+  placeholder = '',
   value,
   defaultValue,
   disabled,
@@ -45,5 +45,5 @@ export const InputComponent: React.FC<InputProps> = ({
       onChange={onChange}
       name={name}
     />
-  );
-};
+  )
+}

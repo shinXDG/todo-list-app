@@ -1,2 +1,2 @@
-import { HomePage } from "./pages/HomePage";
-export { HomePage };
+import { HomePage } from './pages/home.page'
+export { HomePage }

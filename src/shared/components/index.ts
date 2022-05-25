@@ -1,17 +1,17 @@
-import { InputComponent } from "./Input/InputComponent";
-import { TextAreaComponent } from "./Input/TextAreaComponent";
-import { DatePickerComponent } from "./Datepicker/DatePickerComponent";
-import { SelectboxComponent } from "./Selectbox/SelectboxComponent";
-import { ButtonComponent } from "./Button/ButtonComponent";
-import { MyButton } from "./Button/MyButton";
-import { MyCheckbox } from "./Checkbox/MyCheckbox";
+import { Input } from './Input/Input'
+import { TextArea } from './Input/TextArea'
+import { DatePickerComponent } from './Datepicker/DatePickerComponent'
+import { Selectbox } from './Selectbox/Selectbox'
+import { Button } from './Button/Button'
+import { MyButton } from './Button/MyButton'
+import { Checkbox } from './Checkbox/Checkbox'
 
 export {
-  InputComponent,
+  Input,
   DatePickerComponent,
-  SelectboxComponent,
-  ButtonComponent,
-  TextAreaComponent,
+  Selectbox,
+  Button,
+  TextArea,
   MyButton,
-  MyCheckbox,
-};
+  Checkbox,
+}

@@ -1,2 +1,2 @@
-import { TodolistPage } from "./pages/TodolistPage";
-export { TodolistPage };
+import { TodolistPage } from './pages/to-do-list.page'
+export { TodolistPage }

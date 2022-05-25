@@ -1,36 +1,36 @@
-import { TTodoList } from "../todolist";
+import { TTodoList } from '../todolist'
 
 export const LIST_TODO: TTodoList = [
   {
     id: 1,
-    title: "Do homework",
+    title: 'Do homework',
     due_date: undefined,
-    piority: "Normal",
+    piority: 'Normal',
     checked: true,
-    description: "",
+    description: '',
   },
   {
     id: 2,
-    title: "Learning English",
+    title: 'Learning English',
     due_date: undefined,
-    piority: "Low",
+    piority: 'Low',
     checked: false,
-    description: "",
+    description: '',
   },
   {
     id: 3,
-    title: "Learning NextJS",
+    title: 'Learning NextJS',
     due_date: undefined,
-    piority: "Normal",
+    piority: 'Normal',
     checked: true,
-    description: "",
+    description: '',
   },
   {
     id: 4,
-    title: "Learning ReactJS",
+    title: 'Learning ReactJS',
     due_date: undefined,
-    piority: "High",
-    description: "",
+    piority: 'High',
+    description: '',
     checked: false,
   },
-];
+]

@@ -1,67 +1,65 @@
-import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import {
-  DatePickerComponent,
-  InputComponent,
-  MyButton,
-  SelectboxComponent,
-  TextAreaComponent,
-} from "shared/components";
-import { getDateNow } from "shared/utils/functionHelper";
-import { createTodo, updateTodo } from "../RequestFake";
-import { TTodoItem } from "../todolist";
+import { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { Input, MyButton, Selectbox, TextArea } from 'shared/components'
+import { getDateNow } from 'shared/utils/functionHelper'
+import { createTodo, updateTodo } from '../RequestFake'
+import { TTodoItem } from '../todolist'
 
 type Props = {
-  dataTodo?: TTodoItem;
-  getDataListTodo?: () => void;
-};
+  dataTodo?: TTodoItem
+  getDataListTodo?: () => void
+}
 
-function RandomInt(min: number, max: number) {
-  return Math.floor(Math.random() * (max - min)) + min;
+function randomInt(min: number, max: number) {
+  return Math.floor(Math.random() * (max - min)) + min
 }
 
 export const AddTodoPage: React.FC<Props> = ({ dataTodo, getDataListTodo }) => {
-  const navigate = useNavigate();
-  const dateNow = getDateNow();
+  const navigate = useNavigate()
+  const dateNow = getDateNow()
   const [dataPush, setDataPush] = useState<TTodoItem>({
-    id: RandomInt(1, 1000),
-    title: "",
+    id: randomInt(1, 1000),
+    title: '',
     due_date: new Date(),
-    piority: "Normal",
+    piority: 'Normal',
     checked: false,
-    description: "",
-  });
+    description: '',
+  })
   useEffect(() => {
     if (dataTodo) {
-      setDataPush(dataTodo);
+      setDataPush(dataTodo)
     }
-  }, [dataTodo]);
+  }, [dataTodo])
 
   const onFinish = () => {
     if (dataTodo) {
-      onUpdateTodo();
+      onUpdateTodo()
     } else {
-      onCreateTodo();
+      onCreateTodo()
     }
-  };
+  }
 
   const onCreateTodo = () => {
-    createTodo(dataPush);
-    navigate("../todo-list");
-  };
+    if (dataPush.title) {
+      createTodo(dataPush)
+      navigate('../todo-list')
+    }
+  }
 
   const onUpdateTodo = () => {
-    updateTodo(dataPush);
-    getDataListTodo && getDataListTodo();
-  };
+    if (dataPush.title) {
+      updateTodo(dataPush)
+      getDataListTodo && getDataListTodo()
+    }
+  }
   return (
     <div className="container-add">
       <div className="title-todolist">New Task</div>
-      <div style={{ marginTop: "20px" }}>
+      <div style={{ marginTop: '20px' }}>
         <div className="item-form">
-          <InputComponent
+          <Input
             placeholder="Add new task"
-            style={{ width: "100%" }}
+            style={{ width: '100%' }}
             value={dataPush.title}
             onChange={(e: any) =>
               setDataPush({ ...dataPush, title: e.target.value })
@@ -70,10 +68,10 @@ export const AddTodoPage: React.FC<Props> = ({ dataTodo, getDataListTodo }) => {
         </div>
 
         <div className="item-form">
-          <div style={{ width: "100%" }}>
+          <div style={{ width: '100%' }}>
             <span>Description</span>
-            <TextAreaComponent
-              style={{ width: "100%" }}
+            <TextArea
+              style={{ width: '100%' }}
               placeholder="Description task..."
               rows={4}
               value={dataPush.description}
@@ -87,66 +85,56 @@ export const AddTodoPage: React.FC<Props> = ({ dataTodo, getDataListTodo }) => {
         <div className="item-form">
           <div
             style={{
-              width: "50%",
-              display: "flex",
-              justifyContent: "flex-start",
+              width: '50%',
+              display: 'flex',
+              justifyContent: 'flex-start',
             }}
           >
             <div
               style={{
-                width: "80%",
-                display: "flex",
-                flexDirection: "column",
+                width: '80%',
+                display: 'flex',
+                flexDirection: 'column',
               }}
             >
               <span>Due date</span>
-              {/* <DatePickerComponent
-                value={dataPush.due_date?.toString()}
-                // min={new Date().toDateString()}
-                onChange={(e: any) => {
-                  setDataPush({
-                    ...dataPush,
-                    due_date: e.target.value,
-                  });
-                }}
-              /> */}
               <input
-                style={{ padding: "5px", border: "1px #d9d9d9 solid" }}
+                style={{ padding: '5px', border: '1px #d9d9d9 solid' }}
                 type="date"
                 value={dataPush.due_date?.toString()}
                 min={dateNow}
                 onChange={(e: any) => {
-                  console.log("dateNow: ", dateNow);
+                  console.log('dateNow: ', dateNow)
                   setDataPush({
                     ...dataPush,
                     due_date: e.target.value,
-                  });
+                  })
                 }}
               />
             </div>
           </div>
           <div
             style={{
-              width: "50%",
-              display: "flex",
-              justifyContent: "flex-end",
+              width: '50%',
+              display: 'flex',
+              justifyContent: 'flex-end',
             }}
           >
             <div
-              style={{ width: "80%", display: "flex", flexDirection: "column" }}
+              style={{ width: '80%', display: 'flex', flexDirection: 'column' }}
             >
               <span>Piority</span>
-              <SelectboxComponent
-                style={{ width: "100%" }}
+              <Selectbox
+                style={{ width: '100%' }}
                 value={dataPush.piority}
                 options={[
-                  { value: "Low", label: "Low" },
-                  { value: "Normal", label: "Normal" },
-                  { value: "High", label: "High" },
+                  { value: 'Low', label: 'Low' },
+                  { value: 'Normal', label: 'Normal' },
+                  { value: 'High', label: 'High' },
                 ]}
                 onChange={(e: any) => {
-                  console.log("e: ", e);
-                  setDataPush({ ...dataPush, piority: e.target.value });
+                  console.log('e: ', e)
+                  setDataPush({ ...dataPush, piority: e.target.value })
                 }}
               />
             </div>
@@ -154,22 +142,23 @@ export const AddTodoPage: React.FC<Props> = ({ dataTodo, getDataListTodo }) => {
         </div>
         <div
           style={{
-            marginTop: "20px",
-            display: "flex",
-            justifyContent: "center",
+            marginTop: '20px',
+            display: 'flex',
+            justifyContent: 'center',
           }}
         >
           <MyButton
-            title={dataTodo ? "Update" : "Add"}
+            title={dataTodo ? 'Update' : 'Add'}
             onClickButton={onFinish}
             style={{
-              width: "100%",
-              backgroundColor: "#389e0d",
-              borderColor: "#389e0d",
+              width: '20%',
+              backgroundColor: '#389e0d',
+              borderColor: '#389e0d',
+              minWidth: '100px',
             }}
           />
         </div>
       </div>
     </div>
-  );
-};
+  )
+}

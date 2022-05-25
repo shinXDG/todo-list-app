@@ -1,15 +1,15 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react'
+import styled from 'styled-components'
 
 type Props = {
-  placeholder?: string;
-  rows?: number;
-  value?: string;
-  defaultValue?: string;
-  disabled?: boolean;
-  style?: React.CSSProperties;
-  onChange?: any;
-};
+  placeholder?: string
+  rows?: number
+  value?: string
+  defaultValue?: string
+  disabled?: boolean
+  style?: React.CSSProperties
+  onChange?: any
+}
 
 export const TextAreaStyled = styled.textarea`
   line-height: 26px;
@@ -25,9 +25,9 @@ export const TextAreaStyled = styled.textarea`
     border-color: #1890ff;
     box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
   }
-`;
+`
 
-export const TextAreaComponent: React.FC<Props> = ({
+export const TextArea: React.FC<Props> = ({
   placeholder,
   rows,
   value,
@@ -46,5 +46,5 @@ export const TextAreaComponent: React.FC<Props> = ({
       defaultValue={defaultValue}
       style={style}
     />
-  );
-};
+  )
+}

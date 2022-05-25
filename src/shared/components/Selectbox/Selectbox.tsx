@@ -1,15 +1,15 @@
-import React, { useEffect } from "react";
-import styled from "styled-components";
+import React, { useEffect } from 'react'
+import styled from 'styled-components'
 
 type Props = {
-  style?: React.CSSProperties;
-  options: Array<any>;
-  placeholder?: string;
-  value?: any;
-  defaultValue?: any;
-  onSelect?: () => void;
-  onChange?: any;
-};
+  style?: React.CSSProperties
+  options: Array<any>
+  placeholder?: string
+  value?: any
+  defaultValue?: any
+  onSelect?: () => void
+  onChange?: any
+}
 
 export const SelectStyled = styled.div`
   /*the container must be positioned relative:*/
@@ -35,7 +35,7 @@ export const SelectStyled = styled.div`
   /*style the arrow inside the select element:*/
   .select-selected:after {
     position: absolute;
-    content: "";
+    content: '';
     top: 14px;
     right: 10px;
     width: 0;
@@ -86,9 +86,9 @@ export const SelectStyled = styled.div`
     border-color: #1890ff;
     box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
   }
-`;
+`
 
-export const SelectboxComponent: React.FC<Props> = ({
+export const Selectbox: React.FC<Props> = ({
   style,
   options = [],
   placeholder,
@@ -189,7 +189,7 @@ export const SelectboxComponent: React.FC<Props> = ({
     // then close all select boxes:*/
     //       document.addEventListener("click", closeAllSelect);
     //     }
-  }, []);
+  }, [])
   return (
     <SelectStyled style={style}>
       <select
@@ -205,5 +205,5 @@ export const SelectboxComponent: React.FC<Props> = ({
         ))}
       </select>
     </SelectStyled>
-  );
-};
+  )
+}
