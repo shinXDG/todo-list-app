@@ -1,7 +1,7 @@
 import React from 'react'
 import { BrowserRouter } from 'react-router-dom'
 import './App.css'
-import AppNavigator from './routes'
+import { AppNavigator } from './routes/routes'
 
 function App() {
   return (

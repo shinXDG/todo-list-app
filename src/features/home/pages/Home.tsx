@@ -1,9 +1,9 @@
-import { LIST_TODO } from 'features/todoList/mock'
+import { LIST_TODO } from 'features/ToDo/mock'
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Button } from 'shared/components'
 import '../style.css'
-export const HomePage: React.FC = () => {
+export const Home: React.FC = () => {
   const navigate = useNavigate()
 
   return (

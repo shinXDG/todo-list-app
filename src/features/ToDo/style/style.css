@@ -1,0 +1,79 @@
+.title-todolist {
+  font-size: 22px;
+  display: flex;
+  justify-content: center;
+  font-weight: 500;
+}
+.body-todolist {
+  margin-top: 30px;
+}
+.header-todolist {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom:10px;
+}
+
+.container-add {
+  width: 100%;
+}
+.item-form {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+.span-error {
+  color: red;
+}
+.warp-todo-list {
+  position: relative;
+  box-sizing: border-box;
+}
+.todo-block {
+  margin-top: 10px;
+  border: 1px solid #d9d9d9;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+}
+
+.warp-item-todo {
+  width: calc(100% - 20px);
+  padding: 10px;
+  display: flex;
+  border-bottom: 1px solid #d9d9d9;
+  justify-content: space-between;
+}
+.title-todo {
+  display: flex;
+  font-weight: bold;
+  width: 60%;
+  /* @media only screen and (max-width: 768px) {
+    display: none;
+  } */
+}
+.action-todo {
+  display: flex;
+  /* width: 15%; */
+  justify-content: space-around;
+}
+.content-todo {
+  width: calc(100% - 20px);
+  padding: 10px;
+}
+.warp-bulk-action {
+  position: fixed;
+  width: calc(100%);
+  z-index: 9999;
+  bottom: -10px;
+  left:0px;
+  display: flex;
+  justify-content: center;
+}
+.bulk-action{
+  height: 100%;
+  width: 100%;
+  max-width: 1200px;
+  padding:15px;
+  background-color: #d9d9d9;
+  display: flex;
+  justify-content: space-between;
+}

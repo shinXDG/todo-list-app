@@ -200,8 +200,10 @@ export const Selectbox: React.FC<Props> = ({
         onChange={onChange}
         onSelect={onSelect}
       >
-        {options.map((itemOption: any) => (
-          <option value={itemOption?.value}>{itemOption?.label}</option>
+        {options.map((itemOption: any, index: number) => (
+          <option value={itemOption?.value} key={index}>
+            {itemOption?.label}
+          </option>
         ))}
       </select>
     </SelectStyled>
