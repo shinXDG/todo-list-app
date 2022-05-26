@@ -46,3 +46,19 @@ export const deleteTodo = (id: number) => {
   }
   return dataSource
 }
+
+export const deleteManyTodo = (array_id: number[]) => {
+  let dataSource: Array<TTodoItem> = [
+    ...JSON.parse(localStorage.getItem('list_todo') || ''),
+  ]
+  array_id.map((itemDelete: number) => {
+    const indexTodo = dataSource?.findIndex(
+      (item: any) => item.id === itemDelete
+    )
+    if (indexTodo !== -1) {
+      dataSource.splice(indexTodo, 1)
+      localStorage.setItem('list_todo', JSON.stringify(dataSource))
+    }
+  })
+  return dataSource
+}

@@ -1,23 +1,30 @@
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Button, Input } from 'shared/components'
-import Alert from 'shared/components/Alert/Alert'
 import { TodoItem } from '../components/TodoItem'
-import { findAll } from '../RequestFake'
+import { deleteManyTodo, findAll } from '../RequestFake'
 import '../style/style.css'
-import { TTodoList } from '../todo'
+import { TTodoItem, TTodoList } from '../todo'
 
 export const ToDoList = () => {
   const navigate = useNavigate()
   const [searchKey, setSearchKey] = useState<string>('')
   const [listTodo, setListTodo] = useState<TTodoList>(findAll(searchKey))
-
+  const [selectedKey, setSelectedKey] = useState<number>(-1)
   useEffect(() => {
     setTimeout(() => {
       getDataListTodo()
     }, 500)
   }, [searchKey])
 
+  useEffect(() => {
+    const foundIndex = listTodo.findIndex((item: TTodoItem) => item.checked)
+    if (foundIndex !== -1) {
+      setSelectedKey(foundIndex)
+    } else {
+      setSelectedKey(-1)
+    }
+  }, [listTodo])
   const getDataListTodo = () => {
     let dataSource = findAll(searchKey)
     setListTodo(dataSource)
@@ -60,8 +67,11 @@ export const ToDoList = () => {
         ))}
         {listTodo.length > 0 && (
           <div
-            className="warp-bulk-action"
-            // style={listTodo.length > 0 ? { display: 'none' } : {}}
+            className={
+              selectedKey !== -1
+                ? 'warp-bulk-action'
+                : 'hidden-wrap-bulk-action'
+            }
           >
             <div className="bulk-action">
               <span>Bulk action:</span>
@@ -80,7 +90,13 @@ export const ToDoList = () => {
                   title="Remove"
                   style={{ backgroundColor: '#f5222d', borderColor: '#f5222d' }}
                   onClickButton={() => {
-                    // deleteTodo(dataTodoItem.id)
+                    const array_delete =
+                      listTodo
+                        ?.filter((itemFilter: TTodoItem) => itemFilter.checked)
+                        .map((item: TTodoItem) => {
+                          return item.id
+                        }) || []
+                    deleteManyTodo(array_delete)
                     getDataListTodo()
                   }}
                 />

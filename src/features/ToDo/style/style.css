@@ -68,6 +68,10 @@
   display: flex;
   justify-content: center;
 }
+
+.hidden-wrap-bulk-action{
+  display: none;
+}
 .bulk-action{
   height: 100%;
   width: 100%;
