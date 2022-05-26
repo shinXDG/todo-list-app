@@ -35,10 +35,10 @@ export const ToDoList = () => {
       <span className="title-todolist">To Do List</span>
       <div className="body-todolist">
         <div className="header-todolist">
-          <div style={{ display: 'flex', width: '86%' }}>
+          <div style={{ display: 'flex', width: '60%' }}>
             <Input
               placeholder="Search..."
-              style={{ width: '70%' }}
+              style={{ width: '100%' }}
               onChange={(e: any) => {
                 setSearchKey(e.target.value)
               }}

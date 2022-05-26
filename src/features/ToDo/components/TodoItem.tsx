@@ -50,7 +50,7 @@ export const TodoItem: React.FC<TodoItemProps> = ({
               onClickCheckbox(event.target.checked)
             }}
           />
-          <div>{dataTodoItem.title}</div>
+          <div className="text">{dataTodoItem.title}</div>
         </div>
         <div className="action-todo">
           <Button
